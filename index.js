@@ -108,7 +108,6 @@ async function run() {
     const verifyStudent = async (req, res, next) => {
       const email = req.decoded.email;
       const query = { email: email };
-      // console.log(query);
       const user = await userCollection.findOne(query);
       // console.log(user);
       if (user?.role !== "student") {
