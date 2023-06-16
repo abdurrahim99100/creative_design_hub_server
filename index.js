@@ -120,7 +120,6 @@ async function run() {
     // instructor
     const verifyInstructor = async (req, res, next) => {
       const email = req.decoded;
-      // console.log(email);
       const query = { email: email.email };
       // console.log(query, "email");
       const user = await userCollection.findOne(query);
