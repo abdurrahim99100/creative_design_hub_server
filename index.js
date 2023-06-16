@@ -187,7 +187,6 @@ async function run() {
       const query = req.params.email;
       // console.log(query);
       const filter = { studentEmail: query };
-      // console.log(filter);
       const result = await selectedClassCollection.find(filter).toArray();
       res.send(result);
     });
