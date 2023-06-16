@@ -269,8 +269,8 @@ async function run() {
     });
 
     
-    // comment related apis;
-    app.post("/comment", verifyJWT, async (req, res) => {
+    // comment related apis; verifyJWT,
+    app.post("/comment",  async (req, res) => {
       const body = req.body;
       const result = await commentCollection.insertOne(body);
       res.send(result);
@@ -280,6 +280,9 @@ async function run() {
       // console.log(result);
       res.send(result);
     });
+
+
+
     // add classes
     app.post("/addClass", verifyJWT, verifyInstructor, async (req, res) => {
       const body = req.body;
@@ -471,9 +474,9 @@ async function run() {
 run().catch(console.dir);
 
 app.get("/", async (req, res) => {
-  res.send("testing server");
+  res.send("TESTING SERVER");
 });
 
 app.listen(port, () => {
-  console.log(`CreativaDesignHub is sitting on port ${port}`);
+  console.log(`CREATIVE DESIGN HUB IS SETTING ON PORT ${port}`);
 });
