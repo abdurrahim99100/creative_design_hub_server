@@ -200,7 +200,6 @@ async function run() {
         const id = req.params.id;
         // console.log(id);
         const body = req.body;
-        // console.log(body);
         const query = { _id: new ObjectId(id) };
         const options = { upsert: true };
         const paidClass = {
