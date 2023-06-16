@@ -31,7 +31,7 @@ const client = new MongoClient(uri, {
 // verify jwt related apis;
 const verifyJWT = (req, res, next) => {
   const authorization = req.headers.authorization;
-  // console.log(authorization);
+  
   if (!authorization) {
     return res
       .status(401)
@@ -82,7 +82,6 @@ async function run() {
 
     app.post("/jwt", (req, res) => {
       const user = req.body;
-      // console.log(user);
       const token = jwt.sign(user, process.env.ACCESS_SECRET_TOKEN, {
         expiresIn: "1h",
       });
