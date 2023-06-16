@@ -177,6 +177,7 @@ async function run() {
       const result = await userCollection.insertOne(user);
       res.send(result);
     });
+    // select class
     app.post("/selected", verifyJWT, verifyStudent, async (req, res) => {
       const selectedClass = req.body;
       const result = await selectedClassCollection.insertOne(selectedClass);
